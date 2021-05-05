@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bio.crowdfunding.model.TemaModel;
+import com.bio.crowdfunding.model.Tema;
 import com.bio.crowdfunding.repository.TemaRepository;
 
 @RestController
@@ -22,12 +22,12 @@ public class TemaController {
 	private TemaRepository repository;
 	
 	@GetMapping
-	public ResponseEntity<List<TemaModel>> findAll(){
+	public ResponseEntity<List<Tema>> findAll(){
 		return ResponseEntity.ok(repository.findAll());
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<TemaModel> findById(@PathVariable long id){
+	public ResponseEntity<Tema> findById(@PathVariable long id){
 		if(repository.existsById(id)) {
 			return ResponseEntity.ok(repository.findById(id).get());
 		}
