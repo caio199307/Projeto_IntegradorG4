@@ -19,7 +19,7 @@ public class TemaModel {
 	
 	@NotNull
 	@Max(100)
-	private String descricao;
+	private String tema;
 
 	public long getId() {
 		return id;
@@ -29,12 +29,12 @@ public class TemaModel {
 		this.id = id;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public String getTema() {
+		return tema;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setTema(String tema) {
+		this.tema = tema;
 	}
 	
 }
