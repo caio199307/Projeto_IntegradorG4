@@ -42,6 +42,12 @@ public class TemaController {
 		/* return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build()); */
 	} 
 	
+	@GetMapping("/nome/{tema}")
+	public ResponseEntity<List<Tema>> findByTema(@PathVariable String tema){
+		return ResponseEntity.ok(repository.findAllByTemaContainingIgnoreCase(tema));
+	}
+	
+	
 	@PostMapping
 	public ResponseEntity<Tema> post(@RequestBody Tema tema) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(tema));
