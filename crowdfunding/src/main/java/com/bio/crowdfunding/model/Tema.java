@@ -4,8 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Max;
+
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 
 @Entity
@@ -16,7 +17,7 @@ public class Tema {
 	private long id;
 	
 	@NotNull
-	@Max(100)
+	@Size(max = 100)
 	private String tema;
 
 	public long getId() {
