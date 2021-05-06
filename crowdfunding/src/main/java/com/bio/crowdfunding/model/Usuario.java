@@ -1,11 +1,17 @@
 package com.bio.crowdfunding.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 public class Usuario {
@@ -24,6 +30,11 @@ public class Usuario {
 	
 	@NotNull
 	private String senha;
+	
+	
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("usuario")
+	private List<Postagem> postagens;
 
 	public long getId() {
 		return id;
@@ -41,12 +52,12 @@ public class Usuario {
 		this.nome = nome;
 	}
 
-	public String getContato() {
+	public String getEmail() {
 		return email;
 	}
 
-	public void setContato(String contato) {
-		this.email = contato;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getSenha() {
@@ -55,6 +66,14 @@ public class Usuario {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public List<Postagem> getPostagens() {
+		return postagens;
+	}
+
+	public void setPostagens(List<Postagem> postagens) {
+		this.postagens = postagens;
 	}
 	
 	
