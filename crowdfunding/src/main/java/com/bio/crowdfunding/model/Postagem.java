@@ -2,6 +2,7 @@ package com.bio.crowdfunding.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,18 +26,26 @@ public class Postagem {
 	
 	private String midia;
 	
+	//@Column(nullable = true)
+	private Integer qtde_doacao;
+	
+	//@Column(nullable = true)
+	private Double valor_doado;
+	
+	//@Column(nullable = true)
+	private Integer qtde_voluntario;
+	
+	
 	@NotNull
 	private double meta;
 	
 	@NotNull
 	private Date data;
 	
-	private int qtde_doacao;
 	
-	private double valor_doado;
-	
-	private int qtde_voluntario;
 
+
+	
 	public long getId() {
 		return id;
 	}
@@ -89,7 +98,7 @@ public class Postagem {
 		return qtde_doacao;
 	}
 
-	public void setQtde_doacao(int qtde_doacao) {
+	public void setQtde_doacao(Integer qtde_doacao) {
 		this.qtde_doacao = qtde_doacao;
 	}
 
@@ -97,7 +106,7 @@ public class Postagem {
 		return valor_doado;
 	}
 
-	public void setValor_doado(double valor_doado) {
+	public void setValor_doado(Double valor_doado) {
 		this.valor_doado = valor_doado;
 	}
 
@@ -105,7 +114,7 @@ public class Postagem {
 		return qtde_voluntario;
 	}
 
-	public void setQtde_voluntario(int qtde_voluntario) {
+	public void setQtde_voluntario(Integer qtde_voluntario) {
 		this.qtde_voluntario = qtde_voluntario;
 	}
 	
