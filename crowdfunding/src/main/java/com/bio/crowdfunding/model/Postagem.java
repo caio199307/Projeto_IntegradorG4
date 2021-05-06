@@ -7,8 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 public class Postagem {
@@ -42,7 +46,10 @@ public class Postagem {
 	@NotNull
 	private Date data;
 	
-	
+	@NotNull
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	private Tema tema;
 
 
 	
@@ -117,5 +124,15 @@ public class Postagem {
 	public void setQtde_voluntario(Integer qtde_voluntario) {
 		this.qtde_voluntario = qtde_voluntario;
 	}
+
+	public Tema getTema() {
+		return tema;
+	}
+
+	public void setTema(Tema tema) {
+		this.tema = tema;
+	}
+	
+	
 	
 }
