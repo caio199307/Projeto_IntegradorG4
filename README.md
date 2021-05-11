@@ -15,7 +15,7 @@
 </p>
 
 <p>
-  Esse projeto foi acompanhado pelos instrutores <a href="https://www.linkedin.com/in/lucas-capelotto-da-silva-43b26216a/">Lucas Capelotto da Silva</a> e <a href="https://www.linkedin.com/in/geandro-ara%C3%BAjo-1b19881b4/">Geandro Araújo</a> para que os alunos pudessem colocar em práticar os conhecimentos do módulo 2, de backend, no Projeto Integrador do grupo 4 da turma 19 da <a href="https://brazil.generation.org/">Generation Brasil</a>. 
+  Esse projeto foi acompanhado pelos instrutores <a href="https://www.linkedin.com/in/lucas-capelotto-da-silva-43b26216a/">Lucas Capelotto da Silva</a> e <a href="https://www.linkedin.com/in/geandro-ara%C3%BAjo-1b19881b4/">Geandro Araújo</a> para que os alunos pudessem colocar em prática os conhecimentos do módulo 2, de backend, no Projeto Integrador do grupo 4 da turma 19 da <a href="https://brazil.generation.org/">Generation Brasil</a>. 
 </p>
 
 <h2 id="Funcionalidades">⚙️ Funcionalidades</h2>
