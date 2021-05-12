@@ -60,4 +60,4 @@
 
 <h2 id="Licenca">📝 Licença</h2>
 
-<p>Este projeto esta sobe a licença <a href="https://github.com/caio199307/Projeto_IntegradorG4/blob/99505619b567ba9cb970a3a5cf8fd8974d657599/LICENSE">MIT</a>.</p>
+<p>Este projeto esta sob a licença <a href="https://github.com/caio199307/Projeto_IntegradorG4/blob/99505619b567ba9cb970a3a5cf8fd8974d657599/LICENSE">MIT</a>.</p>
