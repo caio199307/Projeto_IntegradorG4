@@ -33,7 +33,7 @@ public class UsuarioController {
 	public ResponseEntity<Usuario> post(@RequestBody Usuario usuario){
 		Optional<Usuario> user = usuarioService.cadastrarUsuario(usuario);
 		try {
-			return ResponseEntity.ok(user.get());
+			return ResponseEntity.status(HttpStatus.CREATED).body(user.get());
 		}catch(Exception e) {
 			return ResponseEntity.badRequest().build();
 		}
