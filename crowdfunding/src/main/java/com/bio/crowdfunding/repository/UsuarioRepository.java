@@ -10,5 +10,5 @@ import com.bio.crowdfunding.model.Usuario;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 	//UserName neste caso foi igual ao email
-	Optional<Usuario> findByUsuario(String usuario);
+	Optional<Usuario> findByEmail(String email);
 }

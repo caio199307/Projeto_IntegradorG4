@@ -21,7 +21,7 @@ public class UsuarioService {
 	public Optional<Usuario> cadastrarUsuario(Usuario usuario) {
 
 		//No projeto do professor é getUsuario()
-        if(repository.findByUsuario(usuario.getEmail()).isPresent())
+        if(repository.findByEmail(usuario.getEmail()).isPresent())
             return null;
 
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
@@ -35,7 +35,7 @@ public class UsuarioService {
     public Optional<UserLogin> logar(Optional<UserLogin> user){
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
       //No projeto do professor é getUsuario()
-        Optional<Usuario> usuario = repository.findByUsuario(user.get().getEmail());
+        Optional<Usuario> usuario = repository.findByEmail(user.get().getEmail());
 
         if(usuario.isPresent()) {
             if(encoder.matches(user.get().getSenha(), usuario.get().getSenha())) {
