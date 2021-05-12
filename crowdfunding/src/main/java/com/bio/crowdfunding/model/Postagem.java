@@ -8,9 +8,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.URL;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -28,23 +31,18 @@ public class Postagem {
 	@NotNull
 	private String descricao;
 	
+	@URL
 	private String midia;
 	
-	//@Column(nullable = true)
-	private Integer qtde_doacao;
-	
-	//@Column(nullable = true)
-	private Double valor_doado;
-	
-	//@Column(nullable = true)
-	private Integer qtde_voluntario;
-	
-	
+	private double valor_doado;
+		
 	@NotNull
 	private double meta;
 	
 	@NotNull
-	private Date data;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date data = new java.sql.Date(System.currentTimeMillis());
+	
 	
 	@NotNull
 	@ManyToOne
@@ -106,28 +104,12 @@ public class Postagem {
 		this.data = data;
 	}
 
-	public int getQtde_doacao() {
-		return qtde_doacao;
-	}
-
-	public void setQtde_doacao(Integer qtde_doacao) {
-		this.qtde_doacao = qtde_doacao;
-	}
-
 	public double getValor_doado() {
 		return valor_doado;
 	}
 
 	public void setValor_doado(Double valor_doado) {
 		this.valor_doado = valor_doado;
-	}
-
-	public int getQtde_voluntario() {
-		return qtde_voluntario;
-	}
-
-	public void setQtde_voluntario(Integer qtde_voluntario) {
-		this.qtde_voluntario = qtde_voluntario;
 	}
 
 	public Tema getTema() {

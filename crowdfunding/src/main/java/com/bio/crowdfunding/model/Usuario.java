@@ -23,15 +23,11 @@ public class Usuario {
 	@NotNull
 	private String nome;
 	
-	
-	//@Column(unique = true)
 	@NotNull
 	private String email;
 	
 	@NotNull
 	private String senha;
-	
-	
 	
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
