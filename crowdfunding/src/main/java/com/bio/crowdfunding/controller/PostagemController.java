@@ -65,8 +65,8 @@ public class PostagemController {
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(Postagem));
 	}
 
-	@PutMapping("doacao/id/{id}/doacao/{doacao}")
-	public ResponseEntity<Postagem> doacaoPostagem(@PathVariable long id, @PathVariable double doacao) {
+	@PutMapping("/doacao/id/{id}/valor/{valor}")
+	public ResponseEntity<Postagem> doacaoPostagem(@PathVariable(value = "id") long id, @PathVariable(value = "valor") double doacao) {
 		Optional<Postagem> postagem = service.doacao(id, doacao);
 		try {
 			return ResponseEntity.ok(postagem.get());
