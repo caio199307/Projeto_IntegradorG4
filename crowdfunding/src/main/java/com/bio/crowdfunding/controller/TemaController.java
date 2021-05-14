@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bio.crowdfunding.model.Tema;
 import com.bio.crowdfunding.repository.TemaRepository;
 
+import io.swagger.annotations.ApiOperation;
+
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/tema")
@@ -26,11 +28,13 @@ public class TemaController {
 	@Autowired
 	private TemaRepository repository;
 	
+	@ApiOperation(value = "consulta de todos os temas")
 	@GetMapping
 	public ResponseEntity<List<Tema>> findAll(){
 		return ResponseEntity.ok(repository.findAll());
 	}
 	
+	@ApiOperation(value = "consulta um tema através do id")
 	@GetMapping("/{id}")
 	public ResponseEntity<Tema> findById(@PathVariable long id){
 		if(repository.existsById(id)) {
@@ -42,22 +46,25 @@ public class TemaController {
 		/* return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build()); */
 	} 
 	
+	@ApiOperation(value = "consulta de temas através de parte de um nome")
 	@GetMapping("/nome/{tema}")
 	public ResponseEntity<List<Tema>> findByTema(@PathVariable String tema){
 		return ResponseEntity.ok(repository.findAllByTemaContainingIgnoreCase(tema));
 	}
 	
-	
+	@ApiOperation(value = "cria um tema")
 	@PostMapping
 	public ResponseEntity<Tema> post(@RequestBody Tema tema) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(tema));
 	}
 	
+	@ApiOperation(value = "alteração de um tema")
 	@PutMapping
 	public ResponseEntity<Tema> put(@RequestBody Tema tema) {
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(tema));
 	}
 	
+	@ApiOperation(value = "exclui um tema")
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable long id) {
 		repository.deleteById(id);
