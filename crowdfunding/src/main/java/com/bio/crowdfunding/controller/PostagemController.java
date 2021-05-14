@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bio.crowdfunding.model.Postagem;
 import com.bio.crowdfunding.repository.PostagemRepository;
 
+import io.swagger.annotations.ApiOperation;
+
 
 @RestController
 @CrossOrigin(origins = "*" , allowedHeaders = "*")
@@ -27,27 +29,38 @@ public class PostagemController {
 	@Autowired
 	private PostagemRepository repository;
 	
+	@ApiOperation(value = "consulta de todas as postagens")
 	@GetMapping
 	public ResponseEntity<List<Postagem>> findAll(){
 		return ResponseEntity.ok(repository.findAll());
 	}
+	
+	@ApiOperation(value = "consulta uma postagem através do id")
 	@GetMapping("/{id}")
 	public ResponseEntity<Postagem> findById(@PathVariable long id) {
 		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
+	
+	@ApiOperation(value = "consulta de postagens através de parte de um título")
 	@GetMapping("/titulo/{titulo}")
     public ResponseEntity<List<Postagem>> findByTitulo(@PathVariable String titulo){
       return ResponseEntity.ok(repository.findAllByTituloContainingIgnoreCase(titulo));
    }
+	
+	@ApiOperation(value = "faz uma postagem")
 	@PostMapping
 	public ResponseEntity<Postagem> post(@RequestBody Postagem Postagem){
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(Postagem));
 	}
+	
 	//SERÁ NECESSÁRIO COLOCAR DUAS FORMAS DE ALTERAR A POSTAGEM, UMA DO CRIADOR DO POST E OUTRA PARA OS OUTROS USUÁRIOS.
+	@ApiOperation(value = "alteração de uma postagem")
 	@PutMapping
 	public ResponseEntity<Postagem> put(@RequestBody Postagem Postagem){
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(Postagem));
 	}
+	
+	@ApiOperation(value = "exclui uma postagem")
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable long id) {
 		repository.deleteById(id);

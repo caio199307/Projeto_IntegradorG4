@@ -32,7 +32,7 @@ public class UsuarioController {
 				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
 	}
 	
-	@ApiOperation(value = "cadastra o novo usuário")
+	@ApiOperation(value = "cadastra um novo usuário")
 	@PostMapping("/cadastrar")
 	public ResponseEntity<Usuario> post(@RequestBody Usuario usuario){
 		Optional<Usuario> user = usuarioService.cadastrarUsuario(usuario);
