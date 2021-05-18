@@ -29,8 +29,13 @@ public class PostagemService {
                 return Optional.of(repository.save(postagem.get()));
 
             }
+            
+            else {
+            	postagem.get().setId(-1);
+            	return Optional.of(postagem.get());
+            }
 
-            return Optional.of(postagem.get());
+          
 
         }
 

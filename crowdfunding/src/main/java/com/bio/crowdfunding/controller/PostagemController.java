@@ -69,7 +69,14 @@ public class PostagemController {
 	public ResponseEntity<Postagem> doacaoPostagem(@PathVariable(value = "id") long id, @PathVariable(value = "valor") double doacao) {
 		Optional<Postagem> postagem = service.doacao(id, doacao);
 		try {
-			return ResponseEntity.ok(postagem.get());
+			if(postagem.get().getId() == -1) {
+				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(postagem.get());
+			}
+			
+			else {
+				return ResponseEntity.ok(postagem.get());
+			}
+			
 		} catch (Exception e) {
 			return ResponseEntity.notFound().build();
 		}
