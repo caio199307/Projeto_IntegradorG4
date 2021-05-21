@@ -69,7 +69,8 @@ public class PostagemController {
 	public ResponseEntity<Postagem> doacaoPostagem(@PathVariable(value = "id") long id, @PathVariable(value = "valor") double doacao) {
 		Optional<Postagem> postagem = service.doacao(id, doacao);
 		try {
-			if(postagem.get().getId() == -1) {
+			if(postagem.get().getId() < 0) {
+				postagem.get().setId(-1 * postagem.get().getId());
 				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(postagem.get());
 			}
 			

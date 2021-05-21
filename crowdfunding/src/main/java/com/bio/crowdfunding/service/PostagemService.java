@@ -31,11 +31,9 @@ public class PostagemService {
             }
             
             else {
-            	postagem.get().setId(-1);
+            	postagem.get().setId(-1 * postagem.get().getId());
             	return Optional.of(postagem.get());
-            }
-
-          
+            }        
 
         }
 
