@@ -65,6 +65,7 @@ public class PostagemController {
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(Postagem));
 	}
 
+	@ApiOperation(value = "doação para a postagem")
 	@PutMapping("/doacao/id/{id}/valor/{valor}")
 	public ResponseEntity<Postagem> doacaoPostagem(@PathVariable(value = "id") long id, @PathVariable(value = "valor") double doacao) {
 		Optional<Postagem> postagem = service.doacao(id, doacao);
