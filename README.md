@@ -52,6 +52,13 @@
 
 <h2 id="Executar">🚀 Como executar o projeto</h2>
 
+<p>Você pode ler a documentação e testar a api acessando o swagger do projeto no heroku clicando <a href="https://projetointegradorbio.herokuapp.com/swagger-ui.html#/">aqui</a>. Caso a aplicação pedir para logar, use:</p>
+<ul>
+  <li>Usuário: camilla@gmail.com</li>
+  <li>Senha: 12345</li>
+</ul>
+<br/>
+
 <h2 id="Tecnologias">🛠 Tecnologias</h2>
 
 
