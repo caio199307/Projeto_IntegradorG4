@@ -20,7 +20,44 @@
 
 <h2 id="Funcionalidades">⚙️ Funcionalidades</h2>
 
+<h3>Usuário</h3>
+
+  - [x] Cadastrar usuário
+  - [x] Logar
+
+<h3>Postagem:</h3>
+
+  - [x] Postar
+  - [x] Consultar todas as postagens
+  - [x] Consultar postagens com base no título
+  - [x] Consultar postagem específica através de um ID
+  - [x] Alterar postagem
+  - [x] Fazer uma doação para uma postagem
+  - [x] Deletar postagem
+
+<h3>Tema</h3>
+
+  - [x] Criar tema
+  - [x] Consultar todas os temas
+  - [x] Consultar tema por nome parecido
+  - [x] Consultar tema através de um ID
+  - [x] Alterar cadastro de tema
+  - [x] Deletar cadastro de tema
+
+<p>Endpoints para as funcionalidades: </p>
+
+<img src="Midias_Readme/telas/end-point-postagem.png" alt="End-Points das postagens">
+
+<img src="Midias_Readme/telas/end-point-tema-user.png" alt="End-Points dos temas e dos Usuários">
+
 <h2 id="Executar">🚀 Como executar o projeto</h2>
+
+<p>Você pode ler a documentação e testar a api acessando o swagger do projeto no heroku clicando <a href="https://projetointegradorbio.herokuapp.com/swagger-ui.html#/">aqui</a>. Caso a aplicação pedir para logar, use:</p>
+<ul>
+  <li>Usuário: camilla@gmail.com</li>
+  <li>Senha: 12345</li>
+</ul>
+<br/>
 
 <h2 id="Tecnologias">🛠 Tecnologias</h2>
 
