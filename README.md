@@ -1,4 +1,4 @@
-<h1 align="center">REDE SOCIAL - API REST</h1>
+<h1 align="center">REDE SOCIAL - API REST FULL</h1>
 <p align="center">Em desenvolvimento 🛠 </p>
 <p align="center">
   <a href="#Sobre">Sobre</a> •
