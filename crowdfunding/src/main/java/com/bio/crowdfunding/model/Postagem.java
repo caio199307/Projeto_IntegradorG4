@@ -49,7 +49,6 @@ public class Postagem {
 	@JsonIgnoreProperties("postagem")
 	private Tema tema;
 	
-	
 	@NotNull
 	@ManyToOne
 	@JsonIgnoreProperties("postagens")
