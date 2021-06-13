@@ -1,4 +1,7 @@
-<h1 align="center">REDE SOCIAL - API REST FULL</h1>
+<p align="center">
+  <img src="Midias_Readme/Logo.png" alt="End-Points dos temas e dos Usuários" height="300px" width="300px">
+</p>
+<h1 align="center">FINANCIAMENTO ECOLETIVO - API REST FULL</h1>
 <p align="center">Em desenvolvimento 🛠 </p>
 <p align="center">
   <a href="#Sobre">Sobre</a> •
