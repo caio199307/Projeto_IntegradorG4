@@ -50,6 +50,18 @@ public class PostagemController {
 	public ResponseEntity<List<Postagem>> findByTitulo(@PathVariable String titulo) {
 		return ResponseEntity.ok(repository.findAllByTituloContainingIgnoreCase(titulo));
 	}
+	
+	@ApiOperation(value = "consulta de postagens através de parte de um título")
+	@GetMapping("/usuario/{nomeUsuario}")
+	public ResponseEntity<List<Postagem>> findByNomeUsuario(@PathVariable String nomeUsuario) {
+		return ResponseEntity.ok(repository.findPostagemByNomeUsuario(nomeUsuario));
+	}
+	
+	@ApiOperation(value = "consulta de postagens através de parte de um título")
+	@GetMapping("/tema/{temaId}")
+	public ResponseEntity<List<Postagem>> findByTema(@PathVariable Long temaId) {
+		return ResponseEntity.ok(repository.findPostagemByTema(temaId));
+	}
 
 	@ApiOperation(value = "faz uma postagem")
 	@PostMapping
