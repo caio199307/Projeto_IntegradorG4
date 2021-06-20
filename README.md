@@ -2,7 +2,7 @@
   <img src="Midias_Readme/Logo.png" alt="End-Points dos temas e dos Usuários" height="300px" width="300px">
 </p>
 <h1 align="center">FINANCIAMENTO ECOLETIVO - API REST FULL</h1>
-<p align="center">Em desenvolvimento 🛠 </p>
+<p align="center">Concluído 🚀</p>
 <p align="center">
   <a href="#Sobre">Sobre</a> •
   <a href="#Funcionalidades">Funcionalidades</a> •
@@ -14,7 +14,7 @@
 
 <h2 id="Sobre">:computer: Sobre o projeto</h2>
 <p>
-  REDE SOCIAL - API REST: Uma plataforma que permite com que as pessoas publiquem, financiem e ajudem projetos voltados ao nosso querido planeta Terra com base na ODS 15 da ONU - Vida Terrestre.
+  FINANCIAMENTO ECOLETIVO - API REST: Uma plataforma que permite com que as pessoas publiquem, financiem e ajudem projetos voltados ao nosso querido planeta Terra com base na ODS 15 da ONU - Vida Terrestre.
 </p>
 
 <p>
